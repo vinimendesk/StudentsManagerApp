@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">StudentsManagerApp</string>
+    <string name="desenvolvendo_paixao">Desenvolvendo Paixão</string>
+    <string name="pela">Pela</string>
+    <string name="musica">Música</string>
+    <string name="jovem_tocando_violao">Jovem tocando violão</string>
+    <string name="nivel_de_estudo">Nivel de Estudo</string>
+    <string name="pilha_de_livros">pilha de livros</string>
 </resources>
