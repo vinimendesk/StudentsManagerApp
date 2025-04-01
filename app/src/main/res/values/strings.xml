@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">StudentsManagerApp</string>
+    <string name="desenvolvendo_paixao">Desenvolvendo Paixão</string>
+    <string name="pela">Pela</string>
+    <string name="musica">Música</string>
+    <string name="jovem_tocando_violao">Jovem tocando violão</string>
+    <string name="nivel_de_estudo">Nivel de Estudo</string>
+    <string name="pilha_de_livros">pilha de livros</string>
+    <string name="excluir_alunoCard">Excluir aluno</string>
+    <string name="editar_alunoCard">Editar Aluno</string>
+    <string name="adicionar_alunosFloatButton">Adicionar alunos</string>
+    <string name="imagem_alunoCard">imagem do aluno</string>
+    <string name="nivelAlunoCard">Nível: %s</string>
+    <string name="imagem_do_alunoCard">Imagem do aluno</string>
+    <string name="aulas_dCard">Aulas: %d</string>
+    <string name="fechar_tela_adicionar_aluno">Fechar tela adicionar aluno</string>
+    <string name="selecioine_o_nivel_de_estudoDialog">Selecioine o nivel de estudo</string>
+    <string name="nome_do_alunoDialog">Nome do Aluno</string>
+    <string name="Dialog">Insira o nome do aluno</string>
+    <string name="quantidade_de_aulasDialog">Quantidade de aulas</string>
+    <string name="insira_a_quantidade_de_aulasDialog">Insira a quantidade de aulas</string>
+    <string name="adicionar_alunoDialog">Adicionar Aluno</string>
+    <string name="atualizar_alunoCard">Atualizar Aluno</string>
 </resources>
