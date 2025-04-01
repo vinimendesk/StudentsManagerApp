@@ -50,7 +50,7 @@ fun StudyLevel(
             )
         }
         LazyRow {
-            items(NivelDeEstudo.values()) { nivel ->
+            items(NivelDeEstudo.entries) { nivel ->
 
                 // variáveis de animação de troca de cores.
                 val buttonColor by animateColorAsState(
@@ -80,7 +80,7 @@ fun StudyLevel(
 }
 
 enum class NivelDeEstudo{
-    INICIANTE, BASICO, INTERMEDIARIO, AVANCADO
+    TODOS, INICIANTE, BASICO, INTERMEDIARIO, AVANCADO
 }
 
 @Preview

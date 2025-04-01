@@ -34,8 +34,8 @@ fun TitleMusic(seeDescription: () -> Unit, modifier: Modifier) {
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.error),
         modifier = modifier
             .fillMaxWidth()
-            .height(150.dp)
-            .padding(start = 15.dp, end = 15.dp, bottom = 15.dp)
+            .height(200.dp)
+            .padding(15.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxSize(),
@@ -51,7 +51,7 @@ fun TitleMusic(seeDescription: () -> Unit, modifier: Modifier) {
                 Column {
                     Text(
                         text = stringResource(R.string.desenvolvendo_paixao),
-                        fontSize = 21.sp,
+                        fontSize = 20.7.sp,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier
                             .padding(start = 8.dp, bottom = 8.dp)
