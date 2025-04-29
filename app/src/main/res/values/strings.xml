@@ -21,4 +21,9 @@
     <string name="insira_a_quantidade_de_aulasDialog">Insira a quantidade de aulas</string>
     <string name="adicionar_alunoDialog">Adicionar Aluno</string>
     <string name="atualizar_alunoCard">Atualizar Aluno</string>
+    <string name="alunos">Alunos</string>
+    <string name="aulas">Aulas</string>
+    <string name="aperte_aqui_para_gerenciar_os_alunos">Aperte aqui para gerenciar os alunos</string>
+    <string name="agenda_de_aulas">Agenda de Aulas</string>
+    <string name="rendimento_semanal">"Rendimento Semanal: "</string>
 </resources>

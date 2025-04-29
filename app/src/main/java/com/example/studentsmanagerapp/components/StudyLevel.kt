@@ -23,11 +23,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.studentsmanagerapp.R
+import com.example.studentsmanagerapp.model.BotaoNivelDeEstudo
 
 @Composable
 fun StudyLevel(
-    nivelAtual: NivelDeEstudo,
-    selecionarNivel: (NivelDeEstudo) -> Unit,
+    nivelAtual: BotaoNivelDeEstudo,
+    selecionarNivel: (BotaoNivelDeEstudo) -> Unit,
     modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
@@ -50,7 +51,7 @@ fun StudyLevel(
             )
         }
         LazyRow {
-            items(NivelDeEstudo.entries) { nivel ->
+            items(BotaoNivelDeEstudo.entries) { nivel ->
 
                 // variáveis de animação de troca de cores.
                 val buttonColor by animateColorAsState(
@@ -79,12 +80,10 @@ fun StudyLevel(
     }
 }
 
-enum class NivelDeEstudo{
-    TODOS, INICIANTE, BASICO, INTERMEDIARIO, AVANCADO
-}
+
 
 @Preview
 @Composable
 fun StudyLevelPreview() {
-    StudyLevel(NivelDeEstudo.BASICO, { _ -> }, modifier = Modifier)
+    StudyLevel(BotaoNivelDeEstudo.BASICO, { _ -> }, modifier = Modifier)
 }
