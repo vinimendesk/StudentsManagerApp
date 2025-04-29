@@ -3,10 +3,12 @@ package com.example.studentsmanagerapp.screens.studentScreen
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.studentsmanagerapp.MainApplication
-import com.example.studentsmanagerapp.components.NivelDeEstudo
 import com.example.studentsmanagerapp.data.AlunoEntity
+import com.example.studentsmanagerapp.model.BotaoNivelDeEstudo
+import com.example.studentsmanagerapp.model.ScreenType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -17,6 +19,11 @@ class StudentsViewModel: ViewModel() {
     private val _studentsUiState = MutableStateFlow(StudentsUiState())
     // Armazena o estado coletado como imputavel para exibição.
     val studentsUiState = _studentsUiState.asStateFlow()
+
+    // Variável que faz o gerenciamento dos estado das telas.
+    private val _currentScreen = MutableStateFlow<ScreenType>(ScreenType.STUDENT)
+    // Variável que armazena o estado para exibição.
+    val currentScreen: StateFlow<ScreenType> = _currentScreen
 
     // Obtém o DAO referente ao banco de dados.
     val alunoDao = MainApplication.alunoDatabase.getAlunoDAO()
@@ -38,19 +45,19 @@ class StudentsViewModel: ViewModel() {
         }
     }
 
-    fun filterAlunosByNivel(nivelDeEstudo: NivelDeEstudo) {
+    fun filterAlunosByNivel(nivelDeEstudo: BotaoNivelDeEstudo) {
         val currentList = _alunoList.value
         _studentsUiState.update {
             it.copy(
                 filteredAlunoList = when (nivelDeEstudo) {
-                    NivelDeEstudo.TODOS -> currentList
+                    BotaoNivelDeEstudo.TODOS -> currentList
                     else -> currentList.filter { it.nivelDeEstudo == nivelDeEstudo.name }
                 }
             )
         }
     }
 
-    fun selecionarNivel(nivel: NivelDeEstudo) {
+    fun selecionarNivel(nivel: BotaoNivelDeEstudo) {
         _studentsUiState.update {
             it.copy(nivelAtual = nivel)
         }
@@ -162,5 +169,13 @@ class StudentsViewModel: ViewModel() {
         _studentsUiState.update {
             it.copy(isUpdate = !isUpdate)
         }
+    }
+
+    fun onDestinationChanged(route: String?) {
+        /* Verifica todos os tipos de tela e compara com o rota atual, se não houver rota,
+        o padrão será a tela Student */
+        val screen = ScreenType.entries.find { it.screen == route } ?: ScreenType.STUDENT
+        // Faz a alteração do aestado
+        _currentScreen.value = screen
     }
 }

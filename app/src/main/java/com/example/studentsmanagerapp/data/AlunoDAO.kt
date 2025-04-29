@@ -1,12 +1,11 @@
 package com.example.studentsmanagerapp.data
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.studentsmanagerapp.components.NivelDeEstudo
+import com.example.studentsmanagerapp.model.NivelDeEstudo
 import kotlinx.coroutines.flow.Flow
 
 @Dao
