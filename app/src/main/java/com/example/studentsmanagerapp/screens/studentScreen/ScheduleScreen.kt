@@ -16,6 +16,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -24,6 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.studentsmanagerapp.R
@@ -32,9 +34,13 @@ import com.example.studentsmanagerapp.model.DiaDaSemana
 
 @Composable
 fun ScheduleScreen(
+    scheduleViewModel: ScheduleViewModel = viewModel(),
     navController: NavController,
     modifier: Modifier = Modifier
 ) {
+
+    val scheduleUiState = scheduleViewModel.scheduleUiState.collectAsState()
+
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
         modifier = modifier
@@ -52,8 +58,15 @@ fun ScheduleScreen(
         // Cards da Semana.
         LazyRow {
             items(DiaDaSemana.entries) { dia ->
+                val filteredListAulaEntity = scheduleUiState.value.listAulaEntity.filter {
+                    it.diaDaSemana == dia.dia
+                }
                 CardSchecule(
-                    addAluno = {},
+                    scheduleViewModel = scheduleViewModel,
+                    scheduleUiState = scheduleUiState.value,
+                    listAulaEntity = filteredListAulaEntity,
+                    isAddAulaOpen = scheduleUiState.value.isAddAulaOpenDialog,
+                    isAddAlunoAulaOpen = scheduleUiState.value.isAddAulaAlunoOpenDialog,
                     diaDaSemana = dia,
                     modifier = Modifier
                 )

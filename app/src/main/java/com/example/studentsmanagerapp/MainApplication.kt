@@ -17,6 +17,10 @@ class MainApplication: Application() {
             applicationContext,
             AlunoDatabase::class.java,
             "aluno-database"
-        ).build()
+        )
+            // Se houver alteração na estrutura do banco de dados, destrua a antiga
+            // (O que implica na perca de dados do usuário).
+            .fallbackToDestructiveMigration()
+            .build()
     }
 }

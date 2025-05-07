@@ -27,8 +27,8 @@ class StudentsViewModel: ViewModel() {
 
     // Obtém o DAO referente ao banco de dados.
     val alunoDao = MainApplication.alunoDatabase.getAlunoDAO()
-    // Coleta todos os alunos registrados no banco de dados.
 
+    // Coleta todos os alunos registrados no banco de dados.
     private val _alunoList = MutableStateFlow<List<AlunoEntity>>(emptyList())
     val alunoList = _alunoList.asStateFlow()
 
@@ -156,7 +156,7 @@ class StudentsViewModel: ViewModel() {
         _studentsUiState.update {
             it.copy(
                 isEditStudentDialogOpen = true,
-                studentId = aluno.id,
+                studentId = aluno.AlunoId,
                 studentName = aluno.nome,
                 studentAula = aluno.aula.toString(),
                 nivelDeEstudo = aluno.nivelDeEstudo

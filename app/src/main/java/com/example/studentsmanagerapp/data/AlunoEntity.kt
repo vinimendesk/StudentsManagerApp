@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class AlunoEntity(
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+    val AlunoId: Int = 0,
     // @DrawableRes val img: Int,
     val nome: String,
     val nivelDeEstudo: String,

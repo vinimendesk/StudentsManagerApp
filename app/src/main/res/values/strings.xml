@@ -26,4 +26,8 @@
     <string name="aperte_aqui_para_gerenciar_os_alunos">Aperte aqui para gerenciar os alunos</string>
     <string name="agenda_de_aulas">Agenda de Aulas</string>
     <string name="rendimento_semanal">"Rendimento Semanal: "</string>
+    <string name="adicionar_aulaCardSchedule">Adicionar aula</string>
+    <string name="hor_rio_da_aulaTxt">horário da aula</string>
+    <string name="insira_o_hor_rio_da_aulaTxt">Insira o horário da aula</string>
+    <string name="adicionar_aulaTxt">Adicionar Aula</string>
 </resources>

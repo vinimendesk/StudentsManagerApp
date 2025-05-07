@@ -87,18 +87,6 @@ fun CardEstudante(
 
                     )
                 }
-                // Favorite.
-                IconButton(
-                    onClick = {},
-                    modifier = Modifier
-                        .size(30.dp)
-                ) {
-                    Icon(
-                        imageVector = Icons.Filled.Star,
-                        contentDescription = stringResource(R.string.editar_alunoCard),
-                        tint = Color.White
-                    )
-                }
             }
             // Imagem do Aluno + Textos.
             Box {
@@ -161,14 +149,13 @@ fun CardEstudante(
                 closeDialog = { viewModel.onDimissRequestEditAluno() },
                 addAluno = { viewModel.updateAluno(
                     AlunoEntity(
-                        id = alunoUiState.studentId ?: 0,
+                        AlunoId = alunoUiState.studentId ?: 0,
                         nome = alunoUiState.studentName,
                         aula = alunoUiState.studentAula.toInt(),
                         nivelDeEstudo = alunoUiState.nivelDeEstudo
                     )
                     )
                     viewModel.onDimissRequestEditAluno()
-
                 }
             )
         }
